@@ -66,7 +66,7 @@ app.post("/register", async (req, res) => {
     sendKey(name, email, key);
     res.send(confirm(name, true));
   } catch (err) {
-    res.send(confirm(name, false));
+    res.status(400).send(confirm(name, false));
   }
 });
 
